@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOOKED & BUSY — Brand Mood Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream:   #F5EFE4;
+    --terracotta: #C2654A;
+    --matcha:  #8A9A6A;
+    --deep:    #1C1915;
+    --blush:   #E8C9B8;
+    --sand:    #D4BFA0;
+    --white:   #FDFAF6;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--deep);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER ─────────────────────────────────── */
+  .header {
+    position: relative;
+    width: 100%;
+    padding: 60px 60px 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--sand);
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--terracotta) 0%, transparent 70%);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .header-left h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 10vw, 120px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--deep);
+    animation: slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both;
+  }
+  .header-left h1 span { color: var(--terracotta); }
+
+  .header-left .sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--terracotta);
+    margin-top: 12px;
+    animation: slideUp 0.9s 0.1s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .header-right {
+    text-align: right;
+    animation: fadeIn 1s 0.4s both;
+  }
+  .header-right .label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--matcha);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .header-right .applicant {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+  }
+
+  /* ─── GRID ───────────────────────────────────── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+    padding: 40px 40px 0;
+  }
+
+  .cell {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.8s both;
+  }
+
+  /* Cell 1 — BIG HERO: MOVEMENT / ENERGY */
+  .c1 {
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+    background: var(--deep);
+    min-height: 420px;
+    animation-delay: 0.1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 36px;
+  }
+  .c1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, var(--terracotta) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 80%, var(--matcha) 0%, transparent 50%);
+    opacity: 0.6;
+  }
+  .c1-texture {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(255,255,255,0.03) 2px,
+        rgba(255,255,255,0.03) 4px
+      );
+  }
+  .c1 .tag { position: absolute; top: 24px; left: 24px; }
+  .c1 .tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 6vw, 80px);
+    color: var(--white);
+    line-height: 0.92;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+  }
+  .c1 .tagline em {
+    font-style: normal;
+    color: var(--terracotta);
+  }
+  .c1 .caption {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-top: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Cell 2 — COLOR PALETTE SWATCHES */
+  .c2 {
+    grid-column: 6 / 9;
+    grid-row: 1 / 2;
+    background: var(--white);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation-delay: 0.15s;
+  }
+  .c2 .section-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 16px;
+  }
+  .swatches {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    align-items: flex-end;
+  }
+  .swatch {
+    flex: 1;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8px 6px;
+    transition: transform 0.2s ease;
+    cursor: default;
+  }
+  .swatch:hover { transform: scaleY(1.04); transform-origin: bottom; }
+  .swatch span {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    font-weight: 500;
+  }
+  .s1 { background: var(--terracotta); height: 90px; }
+  .s1 span { color: var(--white); }
+  .s2 { background: var(--matcha); height: 70px; }
+  .s2 span { color: var(--white); }
+  .s3 { background: var(--blush); height: 55px; }
+  .s3 span { color: var(--deep); }
+  .s4 { background: var(--sand); height: 45px; }
+  .s4 span { color: var(--deep); }
+  .s5 { background: var(--deep); height: 80px; }
+  .s5 span { color: rgba(255,255,255,0.5); }
+
+  /* Cell 3 — KINETIC TYPE / ENERGY WORD */
+  .c3 {
+    grid-column: 9 / 13;
+    grid-row: 1 / 2;
+    background: var(--terracotta);
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-delay: 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .c3::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: -40px;
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.2);
+  }
+  .c3::before {
+    content: '';
+    position: absolute;
+    top: -20px; left: -20px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+  .c3 .word-stack {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .c3 .word-stack .big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 4vw, 52px);
+    color: var(--white);
+    line-height: 1;
+    display: block;
+  }
+  .c3 .word-stack .small {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    display: block;
+    margin-top: 6px;
+    letter-spacing: 0.06em;
+  }
+
+  /* Cell 4 — TYPOGRAPHY STUDY */
+  .c4 {
+    grid-column: 6 / 9;
+    grid-row: 2 / 3;
+    background: var(--matcha);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation-delay: 0.25s;
+  }
+  .c4 .section-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .c4 .type-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .c4 .type-display em { font-style: italic; }
+  .c4 .type-note { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+  /* Cell 5 — BRAND VOICE PILLARS */
+  .c5 {
+    grid-column: 9 / 13;
+    grid-row: 2 / 3;
+    background: var(--blush);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation-delay: 0.3s;
+  }
+  .c5 .section-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); }
+  .pillars { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+  .pillar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 3px;
+    border-left: 3px solid var(--terracotta);
+  }
+  .pillar .icon { font-size: 16px; flex-shrink: 0; }
+  .pillar .text { font-size: 12px; font-weight: 500; letter-spacing: 0.04em; }
+  .pillar .subtext { font-size: 10px; color: rgba(28,25,21,0.55); margin-top: 1px; }
+
+  /* Cell 6 — TEXTURE / MATERIAL: PRINT AD FEEL */
+  .c6 {
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+    background: var(--sand);
+    min-height: 260px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    animation-delay: 0.35s;
+    position: relative;
+    overflow: hidden;
+  }
+  .c6::before {
+    content: 'MOVE\AMEN\T';
+    position: absolute;
+    top: 10px; left: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    color: rgba(28,25,21,0.06);
+    line-height: 0.9;
+    pointer-events: none;
+    white-space: pre;
+  }
+  .c6 .quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-style: italic;
+    line-height: 1.35;
+    color: var(--deep);
+    position: relative;
+    z-index: 1;
+  }
+  .c6 .quote span { color: var(--terracotta); }
+  .c6 .attr {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(28,25,21,0.45);
+    margin-top: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Cell 7 — CLIENTS TICKER */
+  .c7 {
+    grid-column: 5 / 9;
+    grid-row: 3 / 4;
+    background: var(--deep);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation-delay: 0.4s;
+    overflow: hidden;
+    position: relative;
+  }
+  .c7 .section-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+  .clients-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .client-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .client-row .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    flex-shrink: 0;
+  }
+  .client-row .name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.04em;
+  }
+  .client-row .type {
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+    margin-left: auto;
+  }
+
+  /* Cell 8 — MOOD WORDS CLOUD */
+  .c8 {
+    grid-column: 9 / 13;
+    grid-row: 3 / 4;
+    background: var(--white);
+    padding: 28px;
+    animation-delay: 0.45s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .c8 .section-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); }
+  .word-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .word-tag {
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .wt-a { background: var(--terracotta); color: var(--white); }
+  .wt-b { background: var(--matcha); color: var(--white); }
+  .wt-c { background: var(--blush); color: var(--deep); }
+  .wt-d { background: var(--sand); color: var(--deep); }
+  .wt-e { border: 1.5px solid var(--deep); color: var(--deep); background: transparent; }
+
+  /* Cell 9 — SERVICES IN MOTION */
+  .c9 {
+    grid-column: 1 / 7;
+    grid-row: 4 / 5;
+    background: var(--terracotta);
+    padding: 36px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    animation-delay: 0.5s;
+    position: relative;
+    overflow: hidden;
+  }
+  .c9::after {
+    content: '';
+    position: absolute;
+    right: -60px; top: 50%;
+    transform: translateY(-50%);
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .service-item .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: rgba(255,255,255,0.2);
+    line-height: 1;
+  }
+  .service-item .name {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--white);
+  }
+  .service-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    flex-shrink: 0;
+  }
+
+  /* Cell 10 — AESTHETIC REF / TEXTURE */
+  .c10 {
+    grid-column: 7 / 13;
+    grid-row: 4 / 5;
+    background: var(--cream);
+    border: 1px solid var(--sand);
+    padding: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    animation-delay: 0.55s;
+    position: relative;
+    overflow: hidden;
+  }
+  .c10::before {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: -30px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: var(--matcha);
+    opacity: 0.12;
+  }
+  .aesthetic-ref {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .aesthetic-ref .big-word {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(30px, 3.5vw, 46px);
+    line-height: 0.95;
+    color: var(--deep);
+  }
+  .aesthetic-ref .big-word .accent { color: var(--matcha); }
+  .aesthetic-ref .descriptor {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(28,25,21,0.55);
+    margin-top: 8px;
+  }
+  .ref-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .ref-block {
+    width: 72px; height: 72px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .rb1 { background: linear-gradient(135deg, var(--terracotta), var(--blush)); }
+  .rb2 { background: var(--matcha); }
+  .rb3 { background: var(--deep); }
+  .rb4 { background: var(--sand); }
+  .rb5 { background: linear-gradient(135deg, var(--blush), var(--sand)); }
+  .rb6 { background: var(--terracotta); }
+
+  /* ─── BOTTOM BAR / COVER LETTER ─────────────── */
+  .cover-section {
+    margin: 40px 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    animation: fadeIn 0.8s 0.6s both;
+  }
+
+  .cover-left {
+    background: var(--deep);
+    padding: 40px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-left::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--terracotta) 0%, transparent 70%);
+    opacity: 0.3;
+  }
+  .cover-left .cl-label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--matcha);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-left h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 4vw, 56px);
+    color: var(--white);
+    line-height: 0.95;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-left h2 span { color: var(--terracotta); }
+  .cover-left p {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.72);
+    position: relative;
+    z-index: 1;
+  }
+  .cover-left p strong { color: var(--blush); font-weight: 500; }
+
+  .cover-right {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--sand);
+  }
+  .cover-right .cl-label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 20px;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    flex: 1;
+  }
+  .skill-item {
+    padding: 14px 16px;
+    border-radius: 3px;
+    background: var(--cream);
+    border-left: 3px solid var(--terracotta);
+  }
+  .skill-item.alt { border-left-color: var(--matcha); }
+  .skill-item .sk-title { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; margin-bottom: 3px; }
+  .skill-item .sk-sub { font-size: 10px; color: rgba(28,25,21,0.5); letter-spacing: 0.04em; }
+
+  .cover-right .cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--sand);
+  }
+  .cover-right .from {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--deep);
+  }
+  .cover-right .email-btn {
+    background: var(--terracotta);
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .cover-right .email-btn:hover {
+    background: var(--deep);
+    transform: translateY(-1px);
+  }
+
+  /* ─── FOOTER ─────────────────────────────────── */
+  .footer {
+    margin: 16px 40px 40px;
+    padding: 20px 28px;
+    border-radius: 4px;
+    background: var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeIn 0.8s 0.7s both;
+  }
+  .footer .f-left {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--deep);
+    opacity: 0.6;
+  }
+  .footer .f-right {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--deep);
+    opacity: 0.5;
+  }
+
+  /* ─── ANIMATIONS ─────────────────────────────── */
+  @keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 900px) {
+    .header { padding: 40px 24px 28px; flex-direction: column; gap: 16px; align-items: flex-start; }
+    .grid { grid-template-columns: 1fr 1fr; gap: 10px; padding: 20px 16px 0; }
+    .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10 {
+      grid-column: auto; grid-row: auto; min-height: auto;
+    }
+    .cover-section { grid-template-columns: 1fr; margin: 16px; }
+    .footer { margin: 10px 16px 24px; flex-direction: column; gap: 8px; text-align: center; }
+    .c9 { flex-wrap: wrap; }
+    .service-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <h1>BOOKED<br>&amp; <span>BUSY</span></h1>
+    <p class="sub">Brand Mood Board - Intern Application</p>
+  </div>
+  <div class="header-right">
+    <span class="label">Submitted by</span>
+    <span class="applicant">Nawal Sarwar</span>
+  </div>
+</header>
+
+<!-- MAIN GRID -->
+<div class="grid">
+
+  <!-- C1: HERO — MOVEMENT & ENERGY -->
+  <div class="cell c1">
+    <div class="c1-texture"></div>
+    <div class="tag">
+      <span style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);">Concept 01 — Brand Energy</span>
+    </div>
+    <div class="tagline">
+      REAL<br>BRANDS,<br><em>REAL</em><br>MOMENTS
+    </div>
+    <p class="caption">From digital presence to physical connection — experiential marketing that actually moves people</p>
+  </div>
+
+  <!-- C2: COLOR PALETTE -->
+  <div class="cell c2">
+    <div class="section-label">Palette</div>
+    <div class="swatches">
+      <div class="swatch s1"><span>Terra</span></div>
+      <div class="swatch s2"><span>Matcha</span></div>
+      <div class="swatch s3"><span>Blush</span></div>
+      <div class="swatch s4"><span>Sand</span></div>
+      <div class="swatch s5"><span>Deep</span></div>
+    </div>
+    <div style="margin-top:14px;font-size:10px;color:rgba(28,25,21,0.4);letter-spacing:0.06em;">
+      Warm, tactile, alive - the palette of a brand that lives IRL
+    </div>
+  </div>
+
+  <!-- C3: KINETIC WORD -->
+  <div class="cell c3">
+    <div class="word-stack">
+      <span class="big">ACTIVATE</span>
+      <span class="big">CONNECT</span>
+      <span class="big">CONVERT</span>
+      <span class="small">the B&B methodology</span>
+    </div>
+  </div>
+
+  <!-- C4: TYPOGRAPHY -->
+  <div class="cell c4">
+    <div class="section-label">Voice &amp; Type</div>
+    <div class="type-display">
+      <em>effortless</em><br>
+      boldness
+    </div>
+    <div class="type-note">Cormorant Garamond + Bebas Neue - editorial warmth meets kinetic energy</div>
+  </div>
+
+  <!-- C5: BRAND PILLARS -->
+  <div class="cell c5">
+    <div class="section-label">Brand Pillars</div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="icon">✦</span>
+        <div>
+          <div class="text">Experiential First</div>
+          <div class="subtext">IRL over URL, always</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <span class="icon">✦</span>
+        <div>
+          <div class="text">Community-Led</div>
+          <div class="subtext">Influencer trust, not reach</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <span class="icon">✦</span>
+        <div>
+          <div class="text">Brand-Native Creative</div>
+          <div class="subtext">Content that feels earned</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C6: EDITORIAL QUOTE -->
+  <div class="cell c6">
+    <div class="quote">
+      "Not every brand deserves a pop-up.<br>
+      <span>The right ones deserve a moment.</span>"
+    </div>
+    <div class="attr">The BOOKED & BUSY ethos - curated, intentional, unforgettable</div>
+  </div>
+
+  <!-- C7: CLIENT ROSTER -->
+  <div class="cell c7">
+    <div class="section-label">Client Universe</div>
+    <div class="clients-scroll">
+      <div class="client-row"><div class="dot"></div><div class="name">Reebok</div><div class="type">Activewear</div></div>
+      <div class="client-row"><div class="dot"></div><div class="name">Allbirds</div><div class="type">Sustainable Fashion</div></div>
+      <div class="client-row"><div class="dot"></div><div class="name">Kopari Beauty</div><div class="type">Beauty / Wellness</div></div>
+      <div class="client-row"><div class="dot"></div><div class="name">Stanley</div><div class="type">Lifestyle / Gear</div></div>
+      <div class="client-row"><div class="dot"></div><div class="name">Vita Coco</div><div class="type">CPG / Beverage</div></div>
+      <div class="client-row"><div class="dot"></div><div class="name">Beyond Meat</div><div class="type">Food / Wellness</div></div>
+    </div>
+  </div>
+
+  <!-- C8: MOOD WORDS -->
+  <div class="cell c8">
+    <div class="section-label">Mood Lexicon</div>
+    <div class="word-cloud">
+      <span class="word-tag wt-a">Tactile</span>
+      <span class="word-tag wt-e">IRL</span>
+      <span class="word-tag wt-b">Earned</span>
+      <span class="word-tag wt-c">Warm</span>
+      <span class="word-tag wt-a">Intentional</span>
+      <span class="word-tag wt-d">Organic</span>
+      <span class="word-tag wt-e">Culturally Native</span>
+      <span class="word-tag wt-b">Activated</span>
+      <span class="word-tag wt-c">Community</span>
+      <span class="word-tag wt-a">Immersive</span>
+      <span class="word-tag wt-d">Editorial</span>
+      <span class="word-tag wt-e">NYC</span>
+    </div>
+  </div>
+
+  <!-- C9: SERVICES -->
+  <div class="cell c9">
+    <div class="service-item">
+      <div class="num">01</div>
+      <div class="name">Experiential<br>Events</div>
+    </div>
+    <div class="service-divider"></div>
+    <div class="service-item">
+      <div class="num">02</div>
+      <div class="name">Influencer<br>Relations</div>
+    </div>
+    <div class="service-divider"></div>
+    <div class="service-item">
+      <div class="num">03</div>
+      <div class="name">Social &amp;<br>Content</div>
+    </div>
+    <div class="service-divider"></div>
+    <div class="service-item">
+      <div class="num">04</div>
+      <div class="name">Brand<br>Partnerships</div>
+    </div>
+    <div class="service-divider"></div>
+    <div class="service-item">
+      <div class="num">05</div>
+      <div class="name">Field<br>Marketing</div>
+    </div>
+  </div>
+
+  <!-- C10: AESTHETIC REFERENCES -->
+  <div class="cell c10">
+    <div class="aesthetic-ref">
+      <div class="big-word">DOWNTOWN<br><span class="accent">GIRL</span> MEETS<br>DATA NERD</div>
+      <div class="descriptor">Visual identity rooted in warmth, movement, and cultural fluency</div>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-block rb1"></div>
+      <div class="ref-block rb2"></div>
+      <div class="ref-block rb3"></div>
+      <div class="ref-block rb4"></div>
+      <div class="ref-block rb5"></div>
+      <div class="ref-block rb6"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- COVER LETTER -->
+<div class="cover-section">
+  <div class="cover-left">
+    <div class="cl-label">Cover Letter</div>
+    <h2>WHY I<br>WANT <span>IN</span></h2>
+    <p>
+      I'm a <strong>NYC-based data analyst and visual arts graduate</strong> who's spent the last year at the intersection of brand analytics and creative execution - and BOOKED &amp; BUSY is exactly where those two worlds collide.<br><br>
+      Your work with <strong>Allbirds, Reebok, and Kopari</strong> shows me an agency that understands how culture actually travels: not through impressions, but through <em>moments</em>. The Coachella brand trip, the Stanley Tucci dinner, the BetterDays pop-up - these are campaigns that respect their audience. That's the kind of work I want to be inside of.<br><br>
+      I bring <strong>SQL, Python, Tableau, and Figma</strong>  and I've used all of them. But beyond the tech stack, I think like a creative. My Visual Arts minor wasn't a hobby; it's how I approach every brief. I built a live AI-powered trend intelligence app for fashion. I know how to make things look right <em>and</em> how to measure whether they worked.<br><br>
+      You said catch your attention. Consider it caught. I'm ready to start.
+    </p>
+  </div>
+
+  <div class="cover-right">
+    <div>
+      <div class="cl-label">What I Bring</div>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="sk-title">Data Analytics</div>
+          <div class="sk-sub">SQL · Python · Tableau · Power BI</div>
+        </div>
+        <div class="skill-item alt">
+          <div class="sk-title">Visual Design</div>
+          <div class="sk-sub">Figma · UI/UX · Mood boarding</div>
+        </div>
+        <div class="skill-item alt">
+          <div class="sk-title">Creative Strategy</div>
+          <div class="sk-sub">Campaign concepting · Brand storytelling</div>
+        </div>
+        <div class="skill-item">
+          <div class="sk-title">AI &amp; Tech</div>
+          <div class="sk-sub">React · NLP · Groq API</div>
+        </div>
+        <div class="skill-item">
+          <div class="sk-title">Content Instincts</div>
+          <div class="sk-sub">Trend literacy · Social-first thinking</div>
+        </div>
+        <div class="skill-item alt">
+          <div class="sk-title">NYC Based</div>
+          <div class="sk-sub">Available immediately · Ready to go</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <span class="from"> Nawal Sarwar</span>
+      <a href="mailto:hello@bookedandbusyagency.com" class="email-btn">Send Application →</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="f-left">BOOKED &amp; BUSY × Nawal Sarwar — Intern Application, 2026</div>
+  <div class="f-right">@bookedandbusyagency · hello@bookedandbusyagency.com</div>
+</div>
+
+</body>
+</html>
